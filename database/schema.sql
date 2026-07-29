@@ -336,3 +336,32 @@ CREATE TABLE sale_items (
         REFERENCES medicines(medicine_id)
 );
 
+-- CEATE INDEXES TO MAKE SEARCHING EASIER
+CREATE INDEX idx_username
+ON users(username);
+
+CREATE INDEX idx_medicine_name
+ON medicines(medicine_name);
+
+CREATE INDEX idx_medicine_code
+ON medicines(medicine_code);
+
+CREATE INDEX idx_barcode
+ON medicines(barcode);
+
+CREATE INDEX idx_supplier
+ON medicines(supplier_id);
+
+CREATE INDEX idx_category
+ON medicines(category_id);
+
+CREATE INDEX idx_sale_date
+ON sales(sale_date);
+
+CREATE INDEX idx_customer
+ON sales(customer_id);
+
+CREATE INDEX idx_expiry
+ON medicines(expiry_date);
+
+
