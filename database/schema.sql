@@ -246,3 +246,93 @@ VALUES
 6.50,
 12.99
 );
+
+-- CUSTOMERS TABLE
+CREATE TABLE customers (
+
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+
+    first_name VARCHAR(50) NOT NULL,
+
+    last_name VARCHAR(50) NOT NULL,
+
+    phone VARCHAR(20),
+
+    email VARCHAR(100),
+
+    loyalty_points INT DEFAULT 0,
+
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        ON UPDATE CURRENT_TIMESTAMP
+);
+-- INSETRT DEFAULT CUSTOMERS
+INSERT INTO customers
+(
+    first_name,
+    last_name,
+    phone,
+    email
+)
+VALUES
+(
+'John',
+'Doe',
+'0821234567',
+'john@example.com'
+),
+(
+'Mary',
+'Smith',
+'0839876543',
+'mary@example.com'
+);
+
+-- SALES TABLE
+CREATE TABLE sales (
+
+    sale_id INT AUTO_INCREMENT PRIMARY KEY,
+
+    customer_id INT NULL,
+-- Not every customer wants to register, but the cashier should still be able to complete a sale.
+
+    user_id INT NOT NULL,
+
+    sale_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    total_amount DECIMAL(10,2) NOT NULL,
+
+    CONSTRAINT fk_sales_customer
+        FOREIGN KEY (customer_id)
+        REFERENCES customers(customer_id),
+
+    CONSTRAINT fk_sales_user
+        FOREIGN KEY (user_id)
+        REFERENCES users(user_id)
+);
+
+-- SALE ITEMS TABLE
+CREATE TABLE sale_items (
+
+    sale_item_id INT AUTO_INCREMENT PRIMARY KEY,
+
+    sale_id INT NOT NULL,
+
+    medicine_id INT NOT NULL,
+
+    quantity INT NOT NULL,
+
+    unit_price DECIMAL(10,2) NOT NULL,
+
+    line_total DECIMAL(10,2) NOT NULL,
+
+    CONSTRAINT fk_saleitems_sale
+        FOREIGN KEY (sale_id)
+        REFERENCES sales(sale_id),
+
+    CONSTRAINT fk_saleitems_medicine
+        FOREIGN KEY (medicine_id)
+        REFERENCES medicines(medicine_id)
+);
+
