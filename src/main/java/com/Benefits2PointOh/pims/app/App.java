@@ -1,25 +1,22 @@
 package com.Benefits2PointOh.pims.app;
 
-import com.Benefits2PointOh.pims.database.DatabaseConnection;
-import java.sql.Connection;
+import com.Benefits2PointOh.pims.ui.login.LoginFrame;
+import javax.swing.SwingUtilities;
 
+/*
+ -- Application Entry Point
+ */
 public class App {
 
     public static void main(String[] args) {
 
-        System.out.println("Starting Pharmacy Inventory Management System...");
+        SwingUtilities.invokeLater(() -> {
 
-        Connection connection = DatabaseConnection.getConnection();
+            LoginFrame loginFrame = new LoginFrame();
 
-        if (connection != null) {
+            loginFrame.setVisible(true);
 
-            System.out.println("Application is ready.");
-
-        } else {
-
-            System.out.println("Application failed to start.");
-
-        }
+        });
 
     }
 
