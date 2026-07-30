@@ -375,3 +375,27 @@ SELECT * FROM suppliers;
 SELECT * FROM medicines;
 SELECT * FROM customers;
 */
+
+INSERT INTO users
+(role_id,
+username,
+password_hash,
+first_name,
+last_name,
+email
+)
+VALUES
+(
+1,
+'admin',
+'$2a$10$PmTwF9r4Sxmx6uhNq8oHW.T1bWz8saUiAfvwck9n.h9Pp4jFuOtRu',
+'System',
+'Administrator',
+'admin@pims.local'
+);
+
+SELECT
+user_id,
+username,
+role_id
+FROM users;
