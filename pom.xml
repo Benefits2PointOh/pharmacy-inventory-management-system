@@ -10,4 +10,65 @@
         <maven.compiler.release>26</maven.compiler.release>
         <exec.mainClass>com.benefits2pointoh.pims.app</exec.mainClass>
     </properties>
+    
+    <!-- ========================================================= -->
+<!-- Project Dependencies                                      -->
+<!-- ========================================================= -->
+<dependencies>
+
+    <!-- ===================================================== -->
+    <!-- MySQL Connector/J                                     -->
+    <!-- Allows the Java application to communicate with a      -->
+    <!-- MySQL database using JDBC.                             -->
+    <!-- ===================================================== -->
+    <dependency>
+        <groupId>com.mysql</groupId>
+        <artifactId>mysql-connector-j</artifactId>
+        <version>9.4.0</version>
+    </dependency>
+
+    <!-- ===================================================== -->
+    <!-- jBCrypt                                               -->
+    <!-- Used to securely hash and verify user passwords.       -->
+    <!-- Passwords are never stored in plain text.              -->
+    <!-- ===================================================== -->
+    <dependency>
+        <groupId>org.mindrot</groupId>
+        <artifactId>jbcrypt</artifactId>
+        <version>0.4</version>
+    </dependency>
+
+    <!-- ===================================================== -->
+    <!-- FlatLaf                                                -->
+    <!-- Gives Java Swing a modern, professional appearance.    -->
+    <!-- Our custom colour palette will be applied on top.      -->
+    <!-- ===================================================== -->
+    <dependency>
+        <groupId>com.formdev</groupId>
+        <artifactId>flatlaf</artifactId>
+        <version>3.6</version>
+    </dependency>
+
+    <!-- ===================================================== -->
+    <!-- Ikonli Swing                                           -->
+    <!-- Allows Font Awesome icons to be used in Swing.         -->
+    <!-- ===================================================== -->
+    <dependency>
+        <groupId>org.kordamp.ikonli</groupId>
+        <artifactId>ikonli-swing</artifactId>
+        <version>12.4.0</version>
+    </dependency>
+
+    <!-- ===================================================== -->
+    <!-- Font Awesome 6 Icon Pack                              -->
+    <!-- Provides hundreds of professional icons for buttons,   -->
+    <!-- menus and navigation throughout the application.       -->
+    <!-- ===================================================== -->
+    <dependency>
+        <groupId>org.kordamp.ikonli</groupId>
+        <artifactId>ikonli-fontawesome6-pack</artifactId>
+        <version>12.4.0</version>
+    </dependency>
+
+</dependencies>
 </project>
