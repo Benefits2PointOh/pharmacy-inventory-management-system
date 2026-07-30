@@ -364,4 +364,14 @@ ON sales(customer_id);
 CREATE INDEX idx_expiry
 ON medicines(expiry_date);
 
+/*
+-- TESTING, SHOULD NOT HAVE FK (FOREIGN KEY) ERROR
 
+SHOW TABLES;
+
+SELECT * FROM roles;
+SELECT * FROM categories;
+SELECT * FROM suppliers;
+SELECT * FROM medicines;
+SELECT * FROM customers;
+*/
